@@ -13,7 +13,7 @@
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
     <AssemblyName>Attiny1614 DC PWM STEPPER Sunload sensor</AssemblyName>
-    <Name>Attiny1614 DC PWM STEPPER Sunload sensor</Name>
+    <Name>Attiny1614 Screen Mirroring</Name>
     <RootNamespace>Attiny1614 DC PWM STEPPER Sunload sensor</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>

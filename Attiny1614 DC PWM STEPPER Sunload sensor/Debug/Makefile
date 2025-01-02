@@ -88,9 +88,9 @@ SSD1306.d \
 ST7567S.d \
 USART.d
 
-OUTPUT_FILE_PATH +=Attiny1614\ DC\ PWM\ STEPPER\ Sunload\ sensor.elf
+OUTPUT_FILE_PATH +=Attiny1614\ Screen\ Mirroring.elf
 
-OUTPUT_FILE_PATH_AS_ARGS +="Attiny1614 DC PWM STEPPER Sunload sensor.elf"
+OUTPUT_FILE_PATH_AS_ARGS +="Attiny1614 Screen Mirroring.elf"
 
 ADDITIONAL_DEPENDENCIES:=
 
@@ -177,13 +177,13 @@ all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
 $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP) $(LINKER_SCRIPT_DEP)
 	@echo Building target: $@
 	@echo Invoking: AVR/GNU Linker : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="Attiny1614 DC PWM STEPPER Sunload sensor.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -mmcu=attiny1614 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\2.0.368\gcc\dev\attiny1614"  
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="Attiny1614 Screen Mirroring.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -mmcu=attiny1614 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\2.0.368\gcc\dev\attiny1614"  
 	@echo Finished building target: $@
-	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "Attiny1614 DC PWM STEPPER Sunload sensor.elf" "Attiny1614 DC PWM STEPPER Sunload sensor.hex"
-	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "Attiny1614 DC PWM STEPPER Sunload sensor.elf" "Attiny1614 DC PWM STEPPER Sunload sensor.eep" || exit 0
-	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objdump.exe" -h -S "Attiny1614 DC PWM STEPPER Sunload sensor.elf" > "Attiny1614 DC PWM STEPPER Sunload sensor.lss"
-	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures "Attiny1614 DC PWM STEPPER Sunload sensor.elf" "Attiny1614 DC PWM STEPPER Sunload sensor.srec"
-	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-size.exe" "Attiny1614 DC PWM STEPPER Sunload sensor.elf"
+	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "Attiny1614 Screen Mirroring.elf" "Attiny1614 Screen Mirroring.hex"
+	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "Attiny1614 Screen Mirroring.elf" "Attiny1614 Screen Mirroring.eep" || exit 0
+	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objdump.exe" -h -S "Attiny1614 Screen Mirroring.elf" > "Attiny1614 Screen Mirroring.lss"
+	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures "Attiny1614 Screen Mirroring.elf" "Attiny1614 Screen Mirroring.srec"
+	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-size.exe" "Attiny1614 Screen Mirroring.elf"
 	
 	
 
@@ -195,5 +195,5 @@ $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP) $(LINKER
 clean:
 	-$(RM) $(OBJS_AS_ARGS) $(EXECUTABLES)  
 	-$(RM) $(C_DEPS_AS_ARGS)   
-	rm -rf "Attiny1614 DC PWM STEPPER Sunload sensor.elf" "Attiny1614 DC PWM STEPPER Sunload sensor.a" "Attiny1614 DC PWM STEPPER Sunload sensor.hex" "Attiny1614 DC PWM STEPPER Sunload sensor.lss" "Attiny1614 DC PWM STEPPER Sunload sensor.eep" "Attiny1614 DC PWM STEPPER Sunload sensor.map" "Attiny1614 DC PWM STEPPER Sunload sensor.srec" "Attiny1614 DC PWM STEPPER Sunload sensor.usersignatures"
+	rm -rf "Attiny1614 Screen Mirroring.elf" "Attiny1614 Screen Mirroring.a" "Attiny1614 Screen Mirroring.hex" "Attiny1614 Screen Mirroring.lss" "Attiny1614 Screen Mirroring.eep" "Attiny1614 Screen Mirroring.map" "Attiny1614 Screen Mirroring.srec" "Attiny1614 Screen Mirroring.usersignatures"
 	
