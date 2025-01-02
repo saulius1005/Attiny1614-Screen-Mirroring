@@ -1,0 +1,20 @@
+/*
+ * GPIO.c
+ *
+ * Created: 2024-08-15 22:41:25
+ *  Author: Saulius
+ */ 
+#include "Settings.h"
+
+void GPIO_init(){
+	CPU_CCP = CCP_IOREG_gc;
+	CLKCTRL.MCLKCTRLB = 0 << CLKCTRL_PEN_bp;
+	while (CLKCTRL.MCLKSTATUS & CLKCTRL_SOSC_bm);
+
+	PORTB.DIRSET = PIN0_bm | PIN1_bm | PIN2_bm; //I2C SCL, I2C SDA , USART TX
+	PORTB.DIRCLR = PIN3_bm; //In: USART RX
+	PORTB.PIN0CTRL = PORT_PULLUPEN_bm; //pullup SCL
+	PORTB.PIN1CTRL = PORT_PULLUPEN_bm; //pullup SDA
+	PORTB.PIN2CTRL = PORT_PULLUPEN_bm; //pullup TX
+	PORTB.PIN3CTRL = PORT_PULLUPEN_bm; //pullup RX
+}
